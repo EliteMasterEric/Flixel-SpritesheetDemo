@@ -38,8 +38,11 @@ class PlayState extends FlxState
 		// We also specify 24 frames per second and auto-looping enabled.
 		sprite.animation.addByPrefix('idle', 'BF idle dance', 24, true);
 
-		// Add another animation.
+		// Add more animations.
 		sprite.animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+		sprite.animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+		sprite.animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+		sprite.animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
 
 		// Play the default animation.
 		sprite.animation.play('idle');
@@ -55,6 +58,18 @@ class PlayState extends FlxState
 		if (FlxG.keys.justPressed.UP)
 		{
 			sprite.animation.play('singUP');
+		}
+		else if (FlxG.keys.justPressed.LEFT)
+		{
+			sprite.animation.play('singLEFT');
+		}
+		else if (FlxG.keys.justPressed.RIGHT)
+		{
+			sprite.animation.play('singRIGHT');
+		}
+		else if (FlxG.keys.justPressed.DOWN)
+		{
+			sprite.animation.play('singDOWN');
 		}
 		else if (sprite.animation.curAnim.finished)
 		{
