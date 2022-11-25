@@ -44,9 +44,8 @@ class PlayState extends FlxState
 		sprite.animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
 		sprite.animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
 
-		// Play the default animation with a null check to avoid crashes.
-		if (sprite.animation.curAnim != null)
-			sprite.animation.play('idle');
+		// Play the default animation.
+		sprite.animation.play('idle');
 
 		// Add the sprite to the state.
 		add(sprite);
@@ -58,28 +57,23 @@ class PlayState extends FlxState
 
 		if (FlxG.keys.justPressed.UP)
 		{
-			if (sprite.animation.curAnim != null)
-				sprite.animation.play('singUP');
+			sprite.animation.play('singUP');
 		}
 		else if (FlxG.keys.justPressed.LEFT)
 		{
-			if (sprite.animation.curAnim != null)
-				sprite.animation.play('singLEFT');
+			sprite.animation.play('singLEFT');
 		}
 		else if (FlxG.keys.justPressed.RIGHT)
 		{
-			if (sprite.animation.curAnim != null)
-				sprite.animation.play('singRIGHT');
+			sprite.animation.play('singRIGHT');
 		}
 		else if (FlxG.keys.justPressed.DOWN)
 		{
-			if (sprite.animation.curAnim != null)
-				sprite.animation.play('singDOWN');
+			sprite.animation.play('singDOWN');
 		}
 		else if (sprite.animation.curAnim.finished)
 		{
-			if (sprite.animation.curAnim != null)
-				sprite.animation.play('idle');
+			sprite.animation.play('idle');
 		}
 	}
 }
